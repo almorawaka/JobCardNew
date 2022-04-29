@@ -303,11 +303,7 @@ table.d {
         </div>
 </form>
 
-
-
-
-
-
+ <a class="btn btn-primary" href="http://localhost/eldb/jobcardnew/fpdf/index.php" role="button">Link</a>
 
         <h2>2</h2>
     <form action="insert.php" method="post">
