@@ -119,13 +119,151 @@ $pdf->Cell(50 ,10,'',0,1);
 
 $pdf->SetFont('Arial','B',10);
 /*Heading Of the table*/
-$pdf->Cell(10 ,6,'Sl',1,0,'C');
-$pdf->Cell(80 ,6,'Description',1,0,'C');
-$pdf->Cell(23 ,6,'Qty',1,0,'C');
-$pdf->Cell(30 ,6,'Unit Price',1,0,'C');
-$pdf->Cell(20 ,6,'Sales Tax',1,0,'C');
-$pdf->Cell(25 ,6,'Total',1,1,'C');/*end of line*/
+$pdf->Cell(32 ,6,'Date',1,0,'C');
+$pdf->Cell(32 ,6,'',1,0,'C');
+$pdf->Cell(32 ,6,'',1,0,'C');
+$pdf->Cell(32 ,6,'',1,0,'C');
+$pdf->Cell(32 ,6,'',1,0,'C');
+$pdf->Cell(32 ,6,'',1,1,'C');
+$pdf->Cell(32 ,6,'OIC',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,1,'C');
 /*Heading Of the table end*/
+$pdf->Cell(32 ,6,'1',1,0,'L');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,1,'C');
+//2
+$pdf->Cell(32 ,6,'2',1,0,'L');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,1,'C');
+//3
+$pdf->Cell(32 ,6,'3',1,0,'L');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,1,'C');
+//4
+$pdf->Cell(32 ,6,'4',1,0,'L');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,1,'C');
+//5
+$pdf->Cell(32 ,6,'5',1,0,'L');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,0,'C');
+$pdf->Cell(16 ,6,'',1,1,'C');
+//end of section 2
+$pdf-> Ln();
+$pdf -> Line(10, 145, 203, 145);
+$pdf->Cell(71 ,10,'3',0,0);
+$pdf->Cell(59 ,10,'Spare Parts',0,0);
+
+$pdf-> Ln();
+/*Heading Of the table*/
+$pdf->Cell(27 ,6,'H500',1,0,'C');
+$pdf->Cell(27 ,6,'Stock No',1,0,'C');
+$pdf->Cell(13 ,6,'Qty',1,0,'C');
+$pdf->Cell(47 ,6,'Discription',1,0,'C');
+$pdf->Cell(12 ,6,'Sig.',1,0,'C');
+$pdf->Cell(27 ,6,'H503',1,0,'C');
+$pdf->Cell(27 ,6,'Stock No',1,0,'C');
+$pdf->Cell(12 ,6,'Qty',1,1,'C');
+//1
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(13 ,6,'',1,0,'C');
+$pdf->Cell(47 ,6,'',1,0,'C');
+$pdf->Cell(12 ,6,'',1,0,'C');
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(12 ,6,'',1,1,'C');
+//2
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(13 ,6,'',1,0,'C');
+$pdf->Cell(47 ,6,'',1,0,'C');
+$pdf->Cell(12 ,6,'',1,0,'C');
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(12 ,6,'',1,1,'C');
+//3
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(13 ,6,'',1,0,'C');
+$pdf->Cell(47 ,6,'',1,0,'C');
+$pdf->Cell(12 ,6,'',1,0,'C');
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(12 ,6,'',1,1,'C');
+//4
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(13 ,6,'',1,0,'C');
+$pdf->Cell(47 ,6,'',1,0,'C');
+$pdf->Cell(12 ,6,'',1,0,'C');
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(12 ,6,'',1,1,'C');
+//5
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(13 ,6,'',1,0,'C');
+$pdf->Cell(47 ,6,'',1,0,'C');
+$pdf->Cell(12 ,6,'',1,0,'C');
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(27 ,6,'',1,0,'C');
+$pdf->Cell(12 ,6,'',1,1,'C');
+
+$pdf-> Ln();
+
+$pdf -> Line(10, 195, 203, 195);
+$pdf->Cell(71 ,10,'4 I,',0,0);
+$pdf-> Ln();
+
 $pdf->SetFont('Arial','',10);
     for ($i = 0; $i <= 10; $i++) {
 		$pdf->Cell(10 ,6,$i,1,0);
