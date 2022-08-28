@@ -1,3 +1,5 @@
+
+
 <?php
 $hostName = "localhost";
 $userName = "root";
@@ -25,7 +27,7 @@ function fetch_data($db, $tableName, $columns){
    $msg= "Table Name is empty";
 }else{
 $columnName = implode(", ", $columns);
-$query = "SELECT $columnName FROM $tableName  ORDER BY job_id DESC LIMIT 0,1";
+$query = "SELECT $columnName FROM $tableName  ORDER BY job_id DESC ";
 $result = $db->query($query);
 if($result== true){ 
  if ($result->num_rows > 0) {
@@ -59,6 +61,7 @@ return $msg;
          <th>Job ID</th>
          <th>Institute Name</th>
          <th>Equipment</th>
+         <th>Print</th>
         
        
     </thead>
@@ -73,6 +76,7 @@ return $msg;
       <td><?php echo $data['job_id']??''; ?></td>
       <td><?php echo $data['institute_name']??''; ?></td>
       <td><?php echo $data['equipment_name']??''; ?></td>
+      <td><?php echo 'print'; ?></td>
 
      </tr>
      <?php
