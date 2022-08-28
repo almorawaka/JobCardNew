@@ -29,7 +29,7 @@
 		// Store the equipment model in a "e_model" variable
         $e_model = mysqli_real_escape_string($con,$_POST['equipment_model']);
         // Store the location ID in a "id" variable
-        $id = mysqli_real_escape_string($con,$_POST['locations']);
+        $id = mysqli_real_escape_string($con,$_POST['location_id']);
 		// Store the location ID in a "id" variable
         $s_id = mysqli_real_escape_string($con,$_POST['staff']);
  
@@ -72,6 +72,39 @@
           content="width=device-width, initial-scale=1.0"> 
 
 <style>
+
+.btn {
+  background: #b4c9d4;
+  background-image: -webkit-linear-gradient(top, #b4c9d4, #769db3);
+  background-image: -moz-linear-gradient(top, #b4c9d4, #769db3);
+  background-image: -ms-linear-gradient(top, #b4c9d4, #769db3);
+  background-image: -o-linear-gradient(top, #b4c9d4, #769db3);
+  background-image: linear-gradient(to bottom, #b4c9d4, #769db3);
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  -webkit-box-shadow: 0px 1px 5px #666666;
+  -moz-box-shadow: 0px 1px 5px #666666;
+  box-shadow: 0px 1px 5px #666666;
+  font-family: Georgia;
+  color: #030003;
+  font-size: 12px;
+  padding: 8px 10px 8px 10px;
+  border: solid #5f8ba1 1px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #1f72a3;
+  background-image: -webkit-linear-gradient(top, #1f72a3, #387aa3);
+  background-image: -moz-linear-gradient(top, #1f72a3, #387aa3);
+  background-image: -ms-linear-gradient(top, #1f72a3, #387aa3);
+  background-image: -o-linear-gradient(top, #1f72a3, #387aa3);
+  background-image: linear-gradient(to bottom, #1f72a3, #387aa3);
+  text-decoration: none;
+}
+
+
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
@@ -102,7 +135,11 @@ table.d {
 
   <div class="card text-center">
   <div class="card-header">
-    Featured
+  <div class="card-footer text-muted">
+  <a class="btn btn-primary" target="blank" href="http://localhost/eldb/jobcardnew/fpdf/index.php" role="button">PRINT LAST JOB</a>
+<a class="btn btn-primary" href="http://localhost/eldb/JobCardNew/spare_parts.php" role="button">ADD SPARE PARTS</a>
+<a class="btn btn-primary" href="http://localhost/eldb/JobCardNew/table.php" role="button">VIEW ALL JOBS</a>
+<a class="btn btn-primary" href="http://localhost/eldb/JobCardNew/elworkform.php" role="button">OPEN NEW JOB CARD</a>
   </div>
   <div class="card-body">
     <!-- <h5 class="card-title">Special title treatment</h5>
@@ -132,7 +169,7 @@ table.d {
                 if ($result->num_rows > 0) {
 			    // output data of each row
                 while($row = $result->fetch_assoc()) {
-                    echo "Job Number:   EL / " . str_pad($row["job_id"],4,0,STR_PAD_LEFT). " / 22 / W     ";
+                    echo "Job Number:   EL / " . (str_pad($row["job_id"],4,0,STR_PAD_LEFT)+1). " / 22 / W     ";
                 }
                 } else {
                     echo "0 results";
@@ -159,71 +196,7 @@ table.d {
         </div>
           
  
-		  
-    <!-- <form method="POST">
-        <p>
-		<label>Name of institute:</label>
-        <input type="text" name="institute_name" required>
-		
-		<label>Name of equipment:</label>
-        <input type="text" name="equipment_name" required></p>
-		
-		<p>
-		<label>Make:</label>
-        <input type="text" name="equipment_make" required>
-		
-		<label>Model:</label>
-        <input type="text" name="equipment_model" required></p>
-		
-        <label>Select a Location</label>
-        <select name="locations">
-            <?php
-                // use a while loop to fetch data
-                // from the $all_categories variable
-                // and individually display as an option
-                while ($locations = mysqli_fetch_array(
-                        $all_locations,MYSQLI_ASSOC)):;
-            ?>
-                <option value="<?php echo $locations["location_id"];
-                    // The value we usually set is the primary key
-                ?>">
-                    <?php echo $locations["location_name"];
-                        // To show the location name to the user
-                    ?>
-                </option>
-            <?php
-                endwhile;
-                // While loop must be terminated
-            ?>
-        </select>
-		
-		
-		
-		
-		<label>Select staff</label>
-        <select name="staff">
-            <?php
-                // use a while loop to fetch data
-                // from the $all_categories variable
-                // and individually display as an option
-                while ($staff = mysqli_fetch_array(
-                        $all_staff,MYSQLI_ASSOC)):;
-            ?>
-                <option value="<?php echo $staff["oic_id"];
-                    // The value we usually set is the primary key
-                ?>">
-                    <?php echo $staff["oic_name"];
-                        // To show the location name to the user
-                    ?>
-                </option>
-            <?php
-                endwhile;
-                // While loop must be terminated
-            ?>
-        </select>
-		<input type="submit" value="submit" name="submit">
-        <br>
-    </form> -->
+	
 
 
    
@@ -239,16 +212,15 @@ table.d {
                     <option selected>Choose...</option>
                     <option> TH   </option>
                     <option> GH   </option>
+                    <option> BH   </option>
+                    <option> DGH   </option>
                 </select>
             </div>
 
             <div class="col-md-2">  
-                <label for="inputState" class="form-label">locations </label>
-                <select name="locations" class="form-select">
-                    <option selected>Choose...</option>
-                    <option> ETU         </option>
-                    <option> OPD         </option>
-                </select>
+     
+                <label class="form-label" >Location</label>
+                <input type="text" name="location_id" placeholder="Name location" class="form-control" required>
             </div>
 
             <div class="col-12">
@@ -282,6 +254,7 @@ table.d {
                 <option> GH           </option>
                 </select> -->
             </div>
+            <!-- code from https://codingstatus.com/display-data-based-on-dropdown-selection-in-php-mysql/ -->
             <div class="col-md-2">
             <label for="inputState" class="form-label"> </label>
                 <select name="staff" class="form-select">
@@ -289,6 +262,9 @@ table.d {
                     <option> 882        </option>
                     <option> 902         </option>
                 </select>
+               <!-- connect to DB  -->
+            
+            
             </div>
         <!-- <div class="col-12">
             <div class="form-check">
@@ -298,23 +274,28 @@ table.d {
             </label>
             </div>
         </div> -->
-        <div class="col-12">
-            <input type="submit" value="ADD JOB CARD" name="submit">
-            <!-- <button type="submit" value="submit"  name="submit" class="btn btn-primary" >Submit</button> -->
-        </div>
+        <!-- <div class="col-md-12"> -->
+            <input type="submit" value="ADD JOB CARD" name="submit"></button> 
+        <!-- <input type="submit" value=" SUBMIT "  name=" SUBMIT " class="btn btn-primary" > </button> -->
+        <!-- </div> -->
 </form>
             </br>
 
-<a class="btn btn-primary" href="http://localhost/eldb/jobcardnew/fpdf/index.php" role="button">PRINT LAST JOB</a>
+
    
 
     <!-- <a href="#" class="btn btn-primary"></a> -->
+
+
+
   </div>
   <div class="card-footer text-muted">
-    2 days ago
+  <a class="btn btn-primary" target="blank" href="http://localhost/eldb/jobcardnew/fpdf/index.php" role="button">PRINT LAST JOB</a>
+<a class="btn btn-primary" href="http://localhost/eldb/JobCardNew/spare_parts.php" role="button">ADD SPARE PARTS</a>
+<a class="btn btn-primary" href="http://localhost/eldb/JobCardNew/table.php" role="button">VIEW ALL JOBS</a>
+<a class="btn btn-primary" href="http://localhost/eldb/JobCardNew/elworkform.php" role="button">OPEN NEW JOB CARD</a>
   </div>
 </div>
-
 
 
 
